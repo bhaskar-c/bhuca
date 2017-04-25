@@ -1,0 +1,111 @@
+﻿
+{
+  "BHaskar": {
+    "version": 6,
+    "daw": {
+      "pitch": {
+        "bend": 0
+      },
+      "modulation": {
+        "rate": 0
+      },
+      "compressor": {
+        "threshold": -20,
+        "ratio": 3,
+        "knee": 2,
+        "attack": 0.1,
+        "release": 20,
+        "makeupGain": 0,
+        "enabled": 0
+      },
+      "delay": {
+        "time": 430,
+        "feedback": 0.531,
+        "dry": 1,
+        "wet": 0.47
+      },
+      "reverb": {
+        "level": 0.22
+      },
+      "masterVolume": {
+        "level": 1
+      }
+    },
+    "instruments": {
+      "synth": {
+        "polyphony": {
+          "voiceCount": 1,
+          "sustain": 0
+        },
+        "modulation": {
+          "waveform": 0,
+          "portamento": 0.0016666666666666666,
+          "rate": 0
+        },
+        "oscillator": {
+          "osc1": {
+            "range": 0,
+            "fineDetune": 0,
+            "waveform": 3
+          },
+          "osc2": {
+            "range": 0,
+            "fineDetune": 0,
+            "waveform": 2
+          },
+          "osc3": {
+            "range": -1,
+            "fineDetune": 0,
+            "waveform": 0
+          }
+        },
+        "mixer": {
+          "volume1": {
+            "enabled": 1,
+            "level": 0.64
+          },
+          "volume2": {
+            "enabled": 1,
+            "level": 0.28
+          },
+          "volume3": {
+            "enabled": 1,
+            "level": 0.6
+          }
+        },
+        "noise": {
+          "enabled": 0,
+          "type": 0,
+          "level": 0.2
+        },
+        "envelopes": {
+          "primary": {
+            "attack": 0.8,
+            "decay": 1.06094,
+            "sustain": 0.5,
+            "release": 0.1
+          },
+          "filter": {
+            "attack": 0.5,
+            "decay": 0.5,
+            "sustain": 0.5,
+            "release": 0.1
+          }
+        },
+        "filter": {
+          "cutoff": 5424,
+          "emphasis": 13.200000000000001,
+          "envAmount": 0
+        },
+        "lfo": {
+          "waveform": 0,
+          "rate": 1,
+          "amount": 0
+        },
+        "pitch": {
+          "bend": 0
+        }
+      }
+    }
+  }
+}

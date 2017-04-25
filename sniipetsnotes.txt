@@ -1,0 +1,207 @@
+For MIDi I need to map note numbers from 0 to 127 - and that takes care of all octaves and transpose business as MIDI sends the correct note number for transpose and octave shift.
+http://www.electronics.dit.ie/staff/tscarff/Music_technology/midi/midi_note_numbers_for_octaves.htm
+
+****************************************************************************************************************************
+app.js
+
+pathway of oscillators and noise generators (as raw source of sound and timbre), envelopes (this one is a bit trickier to explain, you should research it), Low Pass filters and effects (Delay and Reverb).</p>\n			<p>This combines the 2 major ways of creating sound electronically - Additive (oscillators and noise) and Subtractive Sound Synthesis.</p>
+
+use localStorage to persist patches.To backup the presets you have built - Export them (on Safari copy the text and save it to a file with extension .json, everywhere else it will let you download the file).</p>\n			<p>To get them on another computer or get someone else\'s library - simply use the import button
+
+<h3>What technologies did you use?</h3>Web Audio API, Web MIDI API, Local Storage (through npm module "store"). For the effects section I used Tuna.js.</p>\n
+
+AngularJS, webaudio-controls (I am regretting this decision, since these controls are full of bugs and had to fix several of them before releasing), Bootstrap, Font Awesome, Font Orbitron and Stylus is what I used for the UI.
+
+https://github.com/g200kg/webaudio-controls
+
+        "./controller/compressor": 40,
+        "./controller/delay": 41,
+        "./controller/keyboard": 42,
+        "./controller/master-controls": 43,
+        "./controller/master-volume": 44,
+        "./controller/modulation-wheel": 45,
+        "./controller/pitch-bend": 46,
+        "./controller/reverb": 47,
+        "./module/footer/module": 51,
+        "./module/instruments/synth/module": 61,
+        "./module/patch-library/module": 72,
+        "./module/settings/module": 76,
+        "./module/t-shirts/module": 79,
+        "./template/compressor.html": 81,
+        "./template/daw.html": 82,
+        "./template/delay.html": 83,
+        "./template/keyboard.html": 84,
+        "./template/master-controls.html": 85,
+        "./template/master-volume.html": 86,
+        "./template/modulation-wheel.html": 87,
+        "./template/pitch-bend.html": 88,
+        "./template/reverb.html": 89,
+        "angular": 33,
+        "viktor-nv1-engine": 19
+
+
+		53 envelop control ?
+
+*********************************************************************
+<link rel="stylesheet" href="fancyknob.css">
+<script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="fancyknob.js"></script>
+
+
+<input class="demo" type="range" min="0" max="100" value="50">
+$('.demo').fancyknob();
+***********************************************************
+webpack-dev-server --content-base src --inline --hot
+
+************************************************************************
+EVENT HANDLING
+*************************************************************************
+import React from 'react';
+
+class Contacts extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick() {
+    console.log(this); // React Component instance
+  }
+  render() {
+    return (
+      <div onClick={this.handleClick}></div>
+    );
+  }
+}
+
+export default Contacts;
+
+***************
+OR
+*******************************************************************
+
+import React from 'react';
+
+class Contacts extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  handleClick() {
+    console.log(this); // React Component instance
+  }
+  render() {
+    return (
+      <div onClick={this.handleClick.bind(this)}></div>
+    );
+  }
+}
+
+export default Contacts;
+*************************************************************************
+STATE
+*************************************************************************
+
+import React from 'react';
+
+class Contacts extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    };
+  }
+  render() {
+    return (
+      <div></div>
+    );
+  }
+}
+
+export default Contacts;
+
+****************************************************************************
+PROPS
+*****************************************************************************
+
+import React from 'react';
+
+class Contacts extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div></div>
+    );
+  }
+}
+Contacts.propTypes = {
+
+};
+Contacts.defaultProps = {
+
+};
+
+export default Contacts;
+
+
+
+
+**********************************************************************************
+PasteBIn
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  constructor (props, context) {
+    super(props, context)
+    this.state = {
+      listVisible: false,
+    }
+  }
+
+
+  show() {
+    console.log(this); // React Component instance
+    this.setState({ listVisible: true });
+    document.addEventListener("click", this.hide);
+  }
+
+
+
+  select(item) {
+    this.props.selected = item;
+  },
+
+  show() {
+      this.setState({ listVisible: true });
+      document.addEventListener("click", this.hide);
+  },
+
+  hide() {
+    this.setState({ listVisible: false });
+    document.removeEventListener("click", this.hide);
+  },
+
+
+  render: function() {
+    return <div className={"dropdown-container" + (this.state.listVisible ? " show" : "")}>
+      <div className={"dropdown-display" + (this.state.listVisible ? " clicked": "")} onClick={this.show}>
+        <span style={{ color: this.props.selected.hex }}>{this.props.selected.name}</span>
+        <i className="fa fa-angle-down"></i>
+      </div>
+      <div className="dropdown-list">
+        <div>
+          {this.renderListItems()}
+        </div>
+      </div>
+    </div>;
+  },
+
+  renderListItems: function() {
+    var items = [];
+    for (var i = 0; i < this.props.list.length; i++) {
+      var item = this.props.list[i];
+      items.push(<div onClick={this.select.bind(null, item)}>
+        <span style={{ color: item.hex }}>{item.name}</span>
+      </div>);
+    }
+    return items;
+  }
